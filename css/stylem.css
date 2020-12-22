@@ -13,6 +13,7 @@ button {
 h1{
 	background-color: #FF416C;
 	margin:50px,60px,0px,0px;
+	align-items: flex-start;
 }
 body {
 	background: #FF416C;
@@ -20,9 +21,7 @@ body {
 	background: linear-gradient(to right, #FF4B2B, #FF416C);
 	display: flex;
 	justify-content: center;
-	align-items: flex-end;
-	flex-direction: column;
 	font-family: 'Montserrat', sans-serif;
 	height: 100vh;
-	margin: -20px 0 50px;
+	margin: -20px 40px 50px;
 }
