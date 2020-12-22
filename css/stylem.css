@@ -1,0 +1,28 @@
+button {
+    border-radius: 20px;
+	border: 1px solid #fcfbfb;
+	background-color: #fdfafa;
+	color: #0a0a0a;
+	font-size: 12px;
+	font-weight: bold;
+	padding: 12px 45px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	
+}
+h1{
+	background-color: #FF416C;
+	margin:50px,60px,0px,0px;
+}
+body {
+	background: #FF416C;
+	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
+	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	flex-direction: column;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+}
