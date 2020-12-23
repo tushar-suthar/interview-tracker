@@ -16,4 +16,9 @@ const userSchema= new Schema({
                 minlength:[6,'Minimum password length is 6']}
 });
 
+userSchema.post('save',function(doc,next){
+    console.log("user data saved",doc);
+    next();
+});
+
 module.exports = mongoose.model('User', userSchema);

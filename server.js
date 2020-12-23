@@ -15,6 +15,7 @@ const app=express();
 
 
 app.use(express.static(path.join(__dirname)));
+app.use(express.json());
 
 app.get('/',(req,res) => {
     res.sendFile('./pages/main.html',{root:__dirname});
