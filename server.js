@@ -1,5 +1,6 @@
 const express = require('express');
 const path=require('path');
+const cookieparser=require('cookie-parser');
 const mongoose = require('mongoose');
 const user = require('./models/model');
 const auth= require('./routes/auth');
@@ -16,8 +17,10 @@ const app=express();
 
 app.use(express.static(path.join(__dirname)));
 app.use(express.json());
+app.use(cookieparser());
 
 app.get('/',(req,res) => {
     res.sendFile('./pages/main.html',{root:__dirname});
 });
 app.use(auth);
+

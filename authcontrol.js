@@ -28,7 +28,7 @@ module.exports.signup_post = async(req,res) =>{
 
     try{
         const user =await User.create({username,email,password});
-        res.status(201);
+        res.status(201).json(user);
     }
     catch(err){
         const errors= handleError(err)
