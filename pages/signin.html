@@ -7,9 +7,42 @@
     <form action="user" method="POST">
         <h1>Sign In</h1>
         <input type="email" name="email" placeholder="Email">
+        <div class="email error"></div>
         <input type="password" name="password" placeholder="Password">
+        <div class="password error"></div>
         <button>Sign In</button>
     </form>
 
+    <script>
+        const form = document.querySelector('form');
+        const emailErr=document.querySelector('.email.error');
+        const passwordErr=document.querySelector('.password.error');
+
+        form.addEventListener('submit', async(e) => {
+          e.preventDefault();
+          emailErr.textContent = '';
+          passwordErr.textContent = '';
+
+
+          const email = form.email.value;
+          const password = form.password.value;
+          try {
+                const res = await fetch('/signin', { 
+                method: 'POST', 
+                body: JSON.stringify({ email, password }),
+                headers: {'Content-Type': 'application/json'}
+      });
+      const data= await res.json();
+      console.log(data);
+      if (data.errors) {
+        emailErr.textContent = data.errors.email;
+        passwordErr.textContent = data.errors.password;
+      }
+    }
+    catch (err) {
+      console.log(err);
+    }
+  });
+      </script>
 </body>
 </html>

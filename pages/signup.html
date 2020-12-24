@@ -7,14 +7,26 @@
     <form action="signup">
         <h1>Create Account</h1>
         <input type="text" name="name" placeholder="Name">
+        <div class="name error"></div>
         <input type="email" name="email" placeholder="Email">
+        <div class="email error"></div>
         <input type="password" name="password" placeholder="Password">
+        <div class="password error"></div>
         <button>SignUp</button>
     </form>
     <script>
         const form = document.querySelector('form');
+        const nameErr=document.querySelector('.name.error');
+        const emailErr=document.querySelector('.email.error');
+        const passwordErr=document.querySelector('.password.error');
+
         form.addEventListener('submit', async(e) => {
           e.preventDefault();
+          nameErr.textContent='';
+          emailErr.textContent = '';
+          passwordErr.textContent = '';
+
+
           const username =form.name.value;
           const email = form.email.value;
           const password = form.password.value;
@@ -24,6 +36,13 @@
                 body: JSON.stringify({ username,email, password }),
                 headers: {'Content-Type': 'application/json'}
       });
+      const data= await res.json();
+      console.log(data);
+      if (data.errors) {
+        nameErr.textContent = data.errors.name;
+        emailErr.textContent = data.errors.email;
+        passwordErr.textContent = data.errors.password;
+      }
     }
     catch (err) {
       console.log(err);

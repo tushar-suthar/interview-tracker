@@ -6,7 +6,7 @@ const user = require('./models/model');
 const auth= require('./routes/auth');
 
 //connection to database and on port 3000
-mongoose.connect('mongodb+srv://defaulter:9876543210@cluster0.yt0yj.mongodb.net/Interview_Tracker_Data',{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true})
+ mongoose.connect('mongodb+srv://i:1234567890@cluster0.e4a0p.mongodb.net/Interview_Tracker_Data',{useNewUrlParser:true,useUnifiedTopology:true,useCreateIndex:true})
 .then((result)=> app.listen(3000))
 .catch((err) => console.log(err));
 
