@@ -4,7 +4,7 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <form action="user" method="POST">
+    <form action="signin">
         <h1>Sign In</h1>
         <input type="email" name="email" placeholder="Email">
         <div class="email error"></div>
@@ -31,13 +31,16 @@
                 method: 'POST', 
                 body: JSON.stringify({ email, password }),
                 headers: {'Content-Type': 'application/json'}
-      });
-      const data= await res.json();
-      console.log(data);
-      if (data.errors) {
-        emailErr.textContent = data.errors.email;
-        passwordErr.textContent = data.errors.password;
-      }
+            });
+            const data= await res.json();
+            console.log(data);
+            if (data.errors) {
+              emailErr.textContent = data.errors.email;
+              passwordErr.textContent = data.errors.password;
+            }
+            if(data.user){
+              location.assign('./home');
+            }
     }
     catch (err) {
       console.log(err);
