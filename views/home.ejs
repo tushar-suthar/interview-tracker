@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="/styles.css">
+
+
+</head>
+<body>
+  <nav class="bar">
+    <h1><a href="/">Interview Tracker</a></h1>
+    <ul>
+      <% if (user) { %>
+
+        <li >Welcome, <%= user.email %></li>
+        <li ><a href="/logout">Log out</a></li>
+      <% } else { %>
+
+        <li ><a href="/login">Log in</a></li>
+        <li ><a href="/signup" class="btn">Sign up</a></li>
+      <% } %>
+    </ul>
+  </nav>
+
+
+<header>
+
+  <div class="headings special">
+    <h2><a href="./topics">Start learning now!!</a></h2>
+
+  </div>
+</header>
+
+<footer>Copyright 2020 IITG</footer>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>add</title>
+  
+</head>
+<body>
+  
+
+
+<form action="/addquestion">
+
+  <h2>Add Question</h2>
+  <label for="name">QUestion Name</label>
+  <input type="text" name="name" required />
+  <label for="link">Link</label>
+  <input type="text" name="link" required />
+  
+  <label for="topic">Topic</label>
+  <input type="string" name="topic" required />
+  
+  <button>Sign up</button>
+</form>
+
+
+</body>
+</html>
+
+
+<script>
+  const form = document.querySelector('form');
+  
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    
+    // get values
+    const name = form.name.value;
+    const link = form.link.value;
+    const topic = form.topic.value;
+    
+    
+
+    try {
+      const res = await fetch('/addquestion', {
+        method: 'POST',
+        body: JSON.stringify({ name, link , topic }),
+        headers: {'Content-Type': 'application/json'}
+      });
+      
+
+    }
+    catch (err) {
+      console.log(err);
+    }
+  });
+</script>
