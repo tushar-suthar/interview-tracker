@@ -6,7 +6,7 @@ const Schema= mongoose.Schema;
 const userSchema= new Schema({
     username: { type: String, 
                 required: [true,'Please enter a username'], 
-                index: { unique: true } },
+               },
     email: { type: String,
              required: [true,'Please enter a email'], 
              index:{ unique: true } ,
@@ -16,6 +16,33 @@ const userSchema= new Schema({
                 required: [true,'Please enter a password'],
                 minlength:[6,'Minimum password length is 6']}
 });
+
+const topicSchema = new Schema({ topicName: 'string'});
+
+const questionSchema = new Schema({ 
+  name: 'string',
+  linkto: 'string',
+  topicName:[{ type: Schema.Types.ObjectId, ref: 'topic' }],
+  visible:'bool'
+});
+
+const adminSchema= new Schema({
+  username: { type: String, 
+              required: [true,'Please enter a username'], 
+             },
+  email: { type: String,
+           required: [true,'Please enter a email'], 
+           index:{ unique: true } ,
+           validate:[isEmail,'Please enter a valid email']
+          },
+  password: { type: String,
+              required: [true,'Please enter a password'],
+              minlength:[6,'Minimum password length is 6']}
+});
+
+
+
+
 
 userSchema.post('save', function (doc, next) {
     console.log('new user was created & saved', doc);
@@ -42,6 +69,30 @@ userSchema.post('save', function (doc, next) {
     }
     throw Error("Incorrect Email");
   }
-  const User = mongoose.model('user', userSchema);
 
-  module.exports = User;
+  adminSchema.pre('save', async function (next) {
+    const salt =await bcrypt.genSalt();
+    this.password= await bcrypt.hash(this.password,salt);
+    next();
+  });
+
+  adminSchema.statics.login =async function(email,password){
+    const admin=await this.findOne({email});
+    if (admin){
+      const auth =await bcrypt.compare(password,admin.password);
+      if(auth){
+        return admin;
+      }
+      throw Error("Incorrect Password");
+    }
+    throw Error("Incorrect Email");
+  }
+
+
+
+  const User = mongoose.model('user', userSchema);
+  const Admin = mongoose.model('admin', adminSchema);
+  const topic = mongoose.model('topic', topicSchema);
+  const question = mongoose.model('question', questionSchema);
+
+  module.exports = {User,topic,question,Admin};

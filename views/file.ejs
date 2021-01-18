@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <link rel="stylesheet" href="../css/stylem.css">
+</head>
+<body>
+    <h1>
+        <button> <a href="/logout">Log out</a></button>        
+    </h1>
+<table class="table table-inverse">
+    <tbody>
+        <ul>
+      <% for(var i=0; i < question.length; i++) { %>
+      <tr>
+        <a href="<question/%= question[i].linkto %>"><%= question[i].name %></a>
+      </tr>
+      <% } %>
+      </ul>
+    </tbody>
+  </table>
+</body>
+
+</html>

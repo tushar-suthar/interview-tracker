@@ -1,4 +1,4 @@
-const User =require('./models/model');
+const {User,Admin} =require('./models/model');
 const jwt=require('jsonwebtoken');
 
 
@@ -34,10 +34,15 @@ const createtoken=(id) =>{
         expiresIn:age
     });
 }
+const admintoken=(id)=>{
+    return jwt.sign({id},'admin hoon',{
+        expiresIn:age
+    });
+}
 
 
 module.exports.signup_get = (req,res) =>{
-    res.sendFile('./pages/signup.html',{root:__dirname});
+    res.render('signup',{root:__dirname});
 }
 
 module.exports.signup_post = async(req,res) =>{
@@ -56,7 +61,7 @@ module.exports.signup_post = async(req,res) =>{
 }
     
 module.exports.signin_get = (req,res) =>{
-    res.sendFile('./pages/signin.html',{root:__dirname});
+    res.render('signin',{root:__dirname});
 }
 
 
@@ -78,3 +83,22 @@ module.exports.logout_get = (req, res) => {
     res.cookie('jwt', '', { maxAge: 1 });
     res.redirect('/');
   }
+
+module.exports.adminAuth_get = (req,res) =>{
+    res.render('adminAuth',{root:__dirname});
+}
+
+
+module.exports.adminAuth_post = async(req,res) =>{
+    const {email,password}=req.body;
+    try{
+     const user= await Admin.login(email,password);
+     const token= admintoken(user._id);
+     res.cookie('jwt',token,{httpOnly:true});
+     res.status(200).json({user: user._id});
+    }
+    catch(err){
+        const errors = handleError(err);
+        res.status(404).json({errors});
+    }
+}
