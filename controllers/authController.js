@@ -73,16 +73,14 @@ module.exports.topic_get = (req, res) => {
   })
 }
 
-module.exports.question_post = async (req,res) => {
-  var data = new question(req.body);
-  const d = await topic.find({});
-  for(var i=0;i<d.length;i++){
-    if(d.name==req.body.topic){
-      const des = data._id;
-    }
-  }
-  data.topic = des;
-  console.log(data);
+module.exports.question_post = async(req,res) => {
+  var data = new question(res.body);
+  console.log(res.body)
+  let d= await topic.find({name : data.top});
+  
+  
+  console.log(d.name);
+
   data.save()
   .then(item => {
     console.log("data is saved");

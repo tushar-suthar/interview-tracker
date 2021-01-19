@@ -39,14 +39,14 @@
     // get values
     const name = form.name.value;
     const link = form.link.value;
-    const topic = form.topic.value;
+    const top = form.topic.value;
     
     
 
     try {
       const res = await fetch('/addquestion', {
         method: 'POST',
-        body: JSON.stringify({ name, link , topic }),
+        body: JSON.stringify({ name, link , top }),
         headers: {'Content-Type': 'application/json'}
       });
       
