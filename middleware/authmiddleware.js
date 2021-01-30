@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+const {User,Experiance}=require('../models/model');
 
 const requireAuth = (req, res, next) => {
   const token = req.cookies.jwt;
@@ -19,4 +20,30 @@ const requireAuth = (req, res, next) => {
   }
 };
 
-module.exports = { requireAuth };
+const checkUser = (req, res, next) => {
+  const token = req.cookies.jwt;
+  if (token) {
+    jwt.verify(token, 'kisi ko nhi btana', async (err, decodedToken) => {
+      if (err) {
+        res.locals.user = null;
+        next();
+      } else {
+        let user = await User.findById(decodedToken.id);
+        res.locals.user = user;
+        next();
+      }
+    });
+  } else {
+    res.locals.user = null;
+    next();
+  }
+};
+
+const findexp = async(req, res, next) => {
+      
+        let exp = await Experiance.find({});
+        res.locals.exp = exp;
+        next();
+};
+
+module.exports = { requireAuth ,checkUser,findexp};

@@ -1,8 +1,6 @@
 
   body {
-	background: #FF416C;
-	background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-	background: linear-gradient(to right, #FF4B2B, #FF416C);
+	background: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -35,48 +33,64 @@ a {
 	margin: 15px 0;
 }
 
-button {
-    border-radius: 20px;
-	border: 1px solid #FF4B2B;
-	background-color: #FF4B2B;
-	color: #FFFFFF;
-	font-size: 12px;
-	font-weight: bold;
-	padding: 12px 45px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: transform 80ms ease-in;
-}
+
 form {
-    width:20%;
-    border-radius: 20px;
-	background-color: #FFFFFF;
+	width:40%;
+    border-radius: 40px;
+	background: rgba(0, 136, 232, 1);
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(0, 136, 232, 1) 0%,
+    rgba(0, 182, 198, 1) 0%,
+    rgba(0, 136, 232, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right bottom,
+    color-stop(0%, rgba(0, 136, 232, 1)),
+    color-stop(0%, rgba(0, 182, 198, 1)),
+    color-stop(100%, rgba(0, 136, 232, 1))
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(0, 136, 232, 1) 0%,
+    rgba(0, 182, 198, 1) 0%,
+    rgba(0, 136, 232, 1) 100%
+  );
+  background: -o-linear-gradient(
+    -45deg,
+    rgba(0, 136, 232, 1) 0%,
+    rgba(0, 182, 198, 1) 0%,
+    rgba(0, 136, 232, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    -45deg,
+    rgba(0, 136, 232, 1) 0%,
+    rgba(0, 182, 198, 1) 0%,
+    rgba(0, 136, 232, 1) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(0, 136, 232, 1) 0%,
+    rgba(0, 182, 198, 1) 0%,
+    rgba(0, 136, 232, 1) 100%
+  );
+	
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
 	padding: 0 50px;
-	height: 50%;
+	height: 60%;
 	text-align: center;
 }
 
-button:active {
-	transform: scale(0.95);
-}
 
-button:focus {
-	outline: none;
-}
-
-button.ghost {
-	background-color: transparent;
-	border-color: #FFFFFF;
-}
 input {
 	background-color: #eee;
 	border: none;
-	padding: 12px 15px;
-	margin: 8px 0;
+	padding: 12px 5px;
+	margin: 8px 0px;
 	width: 100%;
 }
 
@@ -97,3 +111,28 @@ input {
 	top: 0;
 	height: 100%;
 }
+
+
+
+
+
+button{
+	outline: none;
+	border: none;
+	cursor: pointer;
+	font-size: 13px;
+	border-radius: 20px;
+	padding: 10px 20px;
+	background-color: #f55858;
+	text-transform: uppercase;
+	color: #fff;
+	letter-spacing: 0.25px;
+	-webkit-transition: all 0.3s ease 0s;
+	-moz-transition: all 0.3s ease 0s;
+	-o-transition: all 0.3s ease 0s;
+	transition: all 0.3s ease 0s;
+  }
+  
+  button:hover {
+	background-color: #0088e8;
+  }

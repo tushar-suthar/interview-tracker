@@ -1,24 +1,110 @@
 <!DOCTYPE html>
 <html>
     
-<head>
-    <link rel="stylesheet" href="../css/stylem.css">
-</head>
-<body>
-    <h1>
-        <button> <a href="/logout">Log out</a></button>        
-    </h1>
-<table class="table table-inverse">
-    <tbody>
-        <ul>
-      <% for(var i=0; i < question.length; i++) { %>
-      <tr>
-        <a href="<question/%= question[i].linkto %>"><%= question[i].name %></a>
-      </tr>
-      <% } %>
-      </ul>
-    </tbody>
-  </table>
-</body>
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta name="author" content="Template Mo">
 
+      
+        <!-- abhijeet css -->
+        <link rel="stylesheet" href="../css/abhijeet/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/abhijeet/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/abhijeet/css/owl.carousel.css">
+        <link rel="stylesheet" href="../css/abhijeet/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="../css/abhijeet/css/templatemo-style.css">
+        <!-- end -->
+
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  
+      <title>interview tracker</title>
+  <!--
+  
+  ART FACTORY
+  https://templatemo.com/tm-537-art-factory
+  
+  -->
+      <!-- Additional CSS Files -->
+      <link href="../css/board.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="../css/new.css">
+      <link rel="stylesheet" type="text/css" href="../css/owl-carousel.css">
+      
+  </head>
+  <body>
+    <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="/" class="logo">Interview Tracker</a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      
+                      <ul class="nav">
+                          <li class="submenu">
+                              <a href="javascript:;"><img class="img-xs rounded-circle" src="data:image/<%=user.image.contentType%>;base64,<%=user.image.data.toString('base64')%>" alt="Profile image"></a>
+                              <ul>
+                                  <p><strong><%= user.username %></strong></p>
+                                  <li><a href="profile">Profile</a></li>
+                                  <li><a href="logout">Log Out</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                          
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+     </header>
+<!-- <div class="list"> -->
+
+        <!-- <ul>
+          <div class="box">
+            <input type="checkbox" id="expanded">
+            <p>Hey, don't cut me off like that. I want to speak mylsada usabdsadash uasduiasgidu asgduiagsiusa iuasgdiuasgd igasiud dgas asyyugdsay gdiasg suagiausgiaug diua gaisgasidiusa uiahuias uiasgdiuadsghi uiasgduiasg aiusfdhia mind and don't appreciate being put into a box.</p>
+             Note: I have sadly not found a nice way to put the more button/label inline inside the paragraph, after or before the ellipsis. -->
+            <!-- <label for="expanded" role="button">read more</label>
+          </div>
+      <% for(var i=0; i < question.length; i++) { %>
+          <%if (question[i].visible==1) { %>
+            <tr>
+              <a href="</%= question[i].linkto %>"><%= question[i].name %></a>
+            </tr>
+            <% } %>
+      <% } %>
+    </ul> --> 
+    <section id="team">
+      <div class="container">
+           <div class="row">
+
+      <div class="col-md-12 col-sm-12">
+           <div class="section-title">
+                <h2>Topics<small>Practice from some topics </small></h2>
+           </div>
+      </div>
+      <% for(var i=0; i < question.length; i++) { %>
+           <div class="col-md-3 col-sm-6">
+           <div class="team-thumb">
+                <div class="team-info">
+                     <h3><a href="<%= question[i].link %>"><%= question[i].name %></a></h3>
+                </div>
+           </div>
+           </div>
+           <% } %>
+           
+      </div>
+ </section>
+                     
+ <script src="../css/abhijeet/js/jquery.js"></script>
+ <script src="../css/abhijeet/js/bootstrap.min.js"></script>
+ <script src="../css/abhijeet/js/owl.carousel.min.js"></script>
+ <script src="../css/abhijeet/js/smoothscroll.js"></script>
+ <script src="../css/abhijeet/js/custom.js"></script>
+
+</body>
 </html>

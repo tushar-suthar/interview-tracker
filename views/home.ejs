@@ -2,23 +2,258 @@
 <html>
     
 <head>
-    <link rel="stylesheet" href="../css/stylem.css">
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>interview tracker</title>
+<!--
+
+ART FACTORY
+https://templatemo.com/tm-537-art-factory
+
+-->
+    <!-- Additional CSS Files -->
+    <link href="css/board.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="../css/new.css">
+    <link rel="stylesheet" type="text/css" href="../css/owl-carousel.css">
+    
 </head>
 <body>
-    <h1>
-        <button> <a href="/logout">Log out</a></button>        
-    </h1>
-<table class="table table-inverse">
-    <tbody>
-        <ul>
-      <% for(var i=0; i < topic.length; i++) { %>
-      <tr>
-       <li> <a href="topic/<%= topic[i]._id %>" ><%= topic[i].topicName %></a></li>
-      </tr>
-      <% } %>
-      </ul>
-    </tbody>
-  </table>
+  <header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo">Interview Tracker</a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    
+                    <ul class="nav">
+                        <li class="submenu">
+                            <a href="javascript:;"><img class="img-xs rounded-circle" src="data:image/<%=user.image.contentType%>;base64,<%=user.image.data.toString('base64')%>" alt="Profile image"></a>
+                            <ul>
+                                <p><strong><%= user.username %></strong></p>
+                                <li><a href="profile">Profile</a></li>
+                                <li><a href="logout">Log Out</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                        
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+   </header>
+<div class="lis">
+  <div class="topic"><p><strong>Topics</strong></p></div>
+  <div class="row">
+            <a href="/topic/6008231da45a11214cc27835" class="card education">
+              <div class="overlay"></div>
+            <div class="circle">
+
+              <img src="/images/alarm-clock.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+            </div>
+            <p>Time Complexity</p>
+            </a>
+
+
+
+
+
+
+            <a href="/topic/array" class="card credentialing">
+              <div class="overlay"></div>
+            <div class="circle">
+            
+              <img src="/images/array.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+
+            </div>
+            <p>Array</p>
+            </a>
+
+            <a href="/topic/600823bba45a11214cc2783c" class="card education">
+              <div class="overlay"></div>
+            <div class="circle">
+
+              <img src="/images/alarm-clock.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+            </div>
+            <p>Stacks and Queue</p>
+            </a>
+
+
+
+
+
+
+            <a href="/topic/60082451a45a11214cc2783f" class="card credentialing">
+              <div class="overlay"></div>
+            <div class="circle">
+            
+              <img src="/images/backtracking.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+
+            </div>
+            <p>Backtracking</p>
+            </a>
+
+            <a href="/topic/5ffc7a9445ce0b3130f6e366" class="card education">
+              <div class="overlay"></div>
+            <div class="circle">
+
+              <img src="/images/graph.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+            </div>
+            <p>Graph</p>
+            </a>
+
+
+
+
+
+
+            <a href="/topic/6008239ba45a11214cc2783a" class="card credentialing">
+              <div class="overlay"></div>
+            <div class="circle">
+            
+              <img src="/images/bitmanipulation.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+
+            </div>
+            <p>Bit Manipulation</p>
+            </a>
+
+            <a href="/topic/60082389a45a11214cc27839" class="card education">
+              <div class="overlay"></div>
+            <div class="circle">
+
+              <img src="/images/string.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+            </div>
+            <p>String</p>
+            </a>
+
+
+
+
+
+
+            <a href="/topic/60082416a45a11214cc2783e" class="card credentialing">
+              <div class="overlay"></div>
+            <div class="circle">
+            
+              <img src="/images/array.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+
+            </div>
+            <p>Greedy Algorithm</p>
+            </a>
+
+            <a href="/topic/600823aca45a11214cc2783b" class="card education">
+              <div class="overlay"></div>
+            <div class="circle">
+
+              <img src="/images/alarm-clock.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+            </div>
+            <p>Linked List</p>
+            </a>
+
+
+
+
+
+
+            <a href="/topic/60082404a45a11214cc2783d" class="card credentialing">
+              <div class="overlay"></div>
+            <div class="circle">
+            
+              <img src="/images/graph.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+
+            </div>
+            <p>Dyanamic Programming</p>
+            </a>
+
+            <a href="/topic/5ffc7a5e45ce0b3130f6e363" class="card education">
+              <div class="overlay"></div>
+            <div class="circle">
+
+              <img src="/images/alarm-clock.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+            </div>
+            <p>Heaps and Maps</p>
+            </a>
+
+
+
+
+
+
+            <a href="/topic/5ffc7a7745ce0b3130f6e364" class="card credentialing">
+              <div class="overlay"></div>
+            <div class="circle">
+            
+              <img src="/images/array.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+
+            </div>
+            <p>Tree Data Structure</p>
+            </a>
+
+            <a href="/topic/5ffc7a8b45ce0b3130f6e365" class="card education">
+              <div class="overlay"></div>
+            <div class="circle">
+
+              <img src="/images/hashing.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+            </div>
+            <p>Hashing</p>
+            </a>
+
+
+
+
+
+
+            <a href="/topic/6008236ba45a11214cc27837" class="card credentialing">
+              <div class="overlay"></div>
+            <div class="circle">
+            
+              <img src="/images/maths.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+
+            </div>
+            <p>Maths</p>
+            </a>
+
+
+            <a href="/topic/6008237ea45a11214cc27838" class="card credentialing">
+              <div class="overlay"></div>
+            <div class="circle">
+            
+              <img src="/images/binarysearch.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+
+            </div>
+            <p>Binary Search</p>
+            </a>
+
+
+
+
+
+
+
+            
+          </div>
+
+
+
+        </div>
+        <footer>
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-7 col-md-12 col-sm-12">
+                      <p class="copyright">A project By Tushar and Abhijeet
+                  </div>
+              </div>
+          </div>
+      </footer>
 </body>
 
 </html>

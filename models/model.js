@@ -14,14 +14,27 @@ const userSchema= new Schema({
             },
     password: { type: String,
                 required: [true,'Please enter a password'],
-                minlength:[6,'Minimum password length is 6']}
+                minlength:[6,'Minimum password length is 6']},
+    image:{
+        data: Buffer,
+        contentType: String
+    }
 });
 
-const topicSchema = new Schema({ topicName: 'string'});
+const topicSchema = new Schema({ topicName: {type: String,
+  required: [true,'Please enter a Topic Name'], 
+  index:{ unique: true } ,
+      },
+  });
 
 const questionSchema = new Schema({ 
-  name: 'string',
-  linkto: 'string',
+  name: {type: String,
+          required: [true,'Please enter a Question'], 
+          index:{ unique: true } ,
+  },
+  linkto: {type: String,
+    required: [true,'Please enter a link'], 
+},
   topicName:[{ type: Schema.Types.ObjectId, ref: 'topic' }],
   visible:'bool'
 });
@@ -40,6 +53,25 @@ const adminSchema= new Schema({
               minlength:[6,'Minimum password length is 6']}
 });
 
+const experianceSchema =new Schema({
+  name:{ type: String,  
+   },
+   contentType:{ type: String,  
+   },
+   data:{ type: String,  
+   },
+   company:{ type: String,  
+   },
+  branch: { type: String, 
+    required: [true,'Please enter your branch'], 
+   },
+  year: { type: String, 
+    required: [true,'Please enter your year'], 
+   },
+   experiance: { type: String, 
+    required: [true,'Please enter your year'], 
+   }
+})
 
 
 
@@ -76,6 +108,8 @@ userSchema.post('save', function (doc, next) {
     next();
   });
 
+  
+
   adminSchema.statics.login =async function(email,password){
     const admin=await this.findOne({email});
     if (admin){
@@ -88,11 +122,13 @@ userSchema.post('save', function (doc, next) {
     throw Error("Incorrect Email");
   }
 
+  
 
 
-  const User = mongoose.model('user', userSchema);
+
+  const User = mongoose.model('User', userSchema);
   const Admin = mongoose.model('admin', adminSchema);
   const topic = mongoose.model('topic', topicSchema);
   const question = mongoose.model('question', questionSchema);
-
-  module.exports = {User,topic,question,Admin};
+  const Experiance=mongoose.model('experiance',experianceSchema);
+  module.exports = {User,topic,question,Admin,Experiance};

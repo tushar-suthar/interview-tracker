@@ -1,19 +1,254 @@
 <!DOCTYPE html>
-<html>
-    
-<head>
-    <link rel="stylesheet" href="../css/stylem.css">
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Template Mo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+
+    <title>interview tracker</title>
+<!--
+
+ART FACTORY
+
+https://templatemo.com/tm-537-art-factory
+
+-->
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/templatemo-art-factory.css">
+    <link rel="stylesheet" type="text/css" href="css/owl-carousel.css">
     
 </head>
-<body>
-    <div class="container">
-    <h1>
-        <tr>
-            <td><button> <a href="/signup" >SIGN UP</a></button></td>
-            <td><button> <a href="/signin" >SIGN IN</a></button></td>  
-        </tr>
-    </h1>
-</div>
     
+<body>
+
+<!-- ***** Preloader Start ***** -->
+
+<!-- ***** Preloader End ***** -->
+
+
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="#" class="logo">Interview Tracker</a>
+                    <!-- ***** Logo End ***** -->
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav">
+                        <li class="scroll-to-section"><a href="#about">About</a></li>
+                        <li class="scroll-to-section"><a href="#services">Interview Experiance</a></li>
+                        <li class="scroll-to-section"><a href="#contact-us">Contact Us</a></li>
+                        <% if (user) { %>
+                            <li class="submenu">
+                                <a href="javascript:;"><img class="img-xs rounded-circle" src="data:image/<%=user.image.contentType%>;base64,<%=user.image.data.toString('base64')%>" alt="profile pic"></a>
+                                <ul>
+                                    <p><strong><%= user.username %></strong></p>
+                                    <li><a href="profile">Profile</a></li>
+                                    <li><a href="logout">Log Out</a></li>
+                                </ul>
+                            </li>
+                          <% } else { %>
+                            <li class="scroll-to-section"><a href="/signup">Sign Up</a></li>
+                        <li class="scroll-to-section"><a href="/signin">Sign In</a></li>
+                          <% } %>
+                        
+                    <a class='menu-trigger'>
+                        <span>Menu</span>
+                    </a>
+                    <!-- ***** Menu End ***** -->
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+
+<!-- ***** Welcome Area Start ***** -->
+<div class="welcome-area" id="welcome">
+
+    <!-- ***** Header Text Start ***** -->
+    <div class="header-text">
+        <div class="container">
+            <div class="row">
+                <div class="left-text col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                    <h1>All About Interview for<strong> YOU</strong></h1>
+                    <p>Get all information about interviews topics .People experiances in various companies</p>
+                    <a href="signin" class="main-button-slider">Register</a>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
+                    <img src="/images/slider-icon.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Header Text End ***** -->
+</div>
+<section class="section" id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-sm-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
+                <img src="images/left-image.png" class="rounded img-fluid d-block mx-auto" alt="App">
+            </div>
+            <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
+                <div class="left-heading">
+                    <h5>Topics to care about</h5>
+                </div>
+                <div class="left-text">
+                    <p>Dive deep into the topics and excel your coding interviews</p>
+                    <a href="home" class="main-button">Discover More</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="hr"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</section>
+    <!-- ***** Frequently Question Start ***** -->
+    <section class="section" id="services">
+        <div class="container">
+            <div class="row">
+                <div class="owl-carousel owl-theme">
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="images/amazon.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">First Box Service</h5>
+                        <p>Aenean vulputate massa sed neque consectetur, ac fringilla quam aliquet. Sed a enim nec eros tempor cursus at id libero.</p>
+                        <a href="/experiance/amazon" class="main-button">Read More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="images/google.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Second Box Title</h5>
+                        <p>Pellentesque vitae urna ut nisi viverra tristique quis at dolor. In non sodales dolor, id egestas quam. Aliquam erat volutpat. </p>
+                        <a href="/experiance/google" class="main-button">Discover More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="images/microsoft.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Third Title Box</h5>
+                        <p>Quisque finibus libero augue, in ultrices quam dictum id. Aliquam quis tellus sit amet urna tincidunt bibendum.</p>
+                        <a href="/experiance/microsoft" class="main-button">More Detail</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="images/oracle.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Fourth Service Box</h5>
+                        <p>Fusce sollicitudin feugiat risus, tempus faucibus arcu blandit nec. Duis auctor dolor eu scelerisque vestibulum.</p>
+                        <a href="/experiance/oracle" class="main-button">Read More</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="images/ibm.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Fifth Service Title</h5>
+                        <p>Curabitur aliquam eget tellus id porta. Proin justo sapien, posuere suscipit tortor in, fermentum mattis elit.</p>
+                        <a href="/experiance/ibm" class="main-button">Discover</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="images/cisco.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Sixth Box Title</h5>
+                        <p>Ut nibh velit, aliquam vitae pellentesque nec, convallis vitae lacus. Aliquam porttitor urna ut pellentesque.</p>
+                        <a href="/experiance/cisco" class="main-button">Detail</a>
+                    </div>
+                    <div class="item service-item">
+                        <div class="icon">
+                            <i><img src="images/flipkart.png" alt=""></i>
+                        </div>
+                        <h5 class="service-title">Seventh Title Box</h5>
+                        <p>Sed a consequat velit. Morbi lectus sapien, vestibulum et sapien sit amet, ultrices malesuada odio. Donec non quam.</p>
+                        <a href="/experiance/flipkart" class="main-button">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ***** Features Small End ***** -->
+
+    <section class="section colored" id="contact-us">
+        <div class="container">
+            <!-- ***** Section Title Start ***** -->
+            <!-- ***** Section Title End ***** -->
+
+            <div class="row">
+                <!-- ***** Contact Text Start ***** -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <h5 class="margin-bottom-30">Keep in touch</h5>
+                    <div class="contact-text">
+                        <p>110-220 Quisque diam odio, maximus ac consectetur eu, 10260
+                        <br>auctor non lorem</p>
+                        <p>You are NOT allowed to re-distribute Softy Pinko template on any template collection websites. Thank you.</p>
+                    </div>
+                </div>
+                <!-- ***** Contact Text End ***** -->
+
+                <!-- ***** Contact Form Start ***** -->
+                <div class="col-lg-8 col-md-6 col-sm-12">
+                    <div class="contact-form">
+                        <form id="contact" action="" method="get">
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                              <fieldset>
+                                <input name="name" type="text" class="form-control" id="name" placeholder="Full Name" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-sm-12">
+                              <fieldset>
+                                <input name="email" type="email" class="form-control" id="email" placeholder="E-Mail Address" required="">
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <textarea name="message" rows="6" class="form-control" id="message" placeholder="Your Message" required=""></textarea>
+                              </fieldset>
+                            </div>
+                            <div class="col-lg-12">
+                              <fieldset>
+                                <button type="submit" id="form-submit" class="main-button">Send Message</button>
+                              </fieldset>
+                            </div>
+                          </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- ***** Contact Form End ***** -->
+            </div>
+        </div>
+    </section>
+    <!-- ***** Contact Us End ***** -->
+    
+    <script src="js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="js/owl-carousel.js"></script>
+    <script src="js/scrollreveal.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/jquery.counterup.min.js"></script>
+    <script src="js/imgfix.min.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="js/custom.js"></script>
 </body>
-</html>

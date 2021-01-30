@@ -9,6 +9,9 @@ router.post('/signin',authcontrol.signin_post);
 router.get('/logout', authcontrol.logout_get);
 router.get('/adminAuth', authcontrol.adminAuth_get);
 router.post('/adminAuth',authcontrol.adminAuth_post);
+router.post('/addquestion',authcontrol.addquestion_post);
+router.post('/addtopic',authcontrol.addtopic_post);
+router.post('/addexperiance',authcontrol.addexperiance_post);
 
 
 

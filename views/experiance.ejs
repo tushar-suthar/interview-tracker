@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="../css/expboard.css">
+
+        <!-- abhijeet css -->
+        <link rel="stylesheet" href="../css/abhijeet/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/abhijeet/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/abhijeet/css/owl.carousel.css">
+        <link rel="stylesheet" href="../css/abhijeet/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="../css/abhijeet/css/templatemo-style.css">
+        <!-- end -->
+
+        <link href="../css/expboard.min.css" rel="stylesheet">
+    </head>
+    <body>
+       <header class="header-area header-sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Logo Start ***** -->
+                        <a href="/" class="logo">Interview Tracker</a>
+                        <!-- ***** Logo End ***** -->
+                        <!-- ***** Menu Start ***** -->
+                        
+                        <ul class="nav">
+                            <li class="submenu">
+                                <a href="javascript:;"><img class="img-xs rounded-circle" src="data:image/<%=user.image.contentType%>;base64,<%=user.image.data.toString('base64')%>" alt="Profile image"></a>
+                                <ul>
+                                    <p><strong><%= user.username %></strong></p>
+                                <li><a href="profile">Profile</a></li>
+                                <li><a href="logout">Log Out</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+       </header>
+
+
+       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Your Experiance</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Branch</label>
+                    <input type="text" class="form-control" id="branch" name="branch">
+                  </div>
+                  <div class="form-group">
+                    <label for="recipient-name" class="col-form-label">Year</label>
+                    <input type="text" class="form-control" id="year" name="year">
+                  </div>
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label">Experiance</label>
+                  <textarea class="form-control" id="experiance" name="experiance"></textarea>
+                </div>
+                <input type = "hidden" name = "id" value = <%= user._id %> />
+                <input type = "hidden" name = "company" value = <%= company %> />
+                
+
+            </div>
+            <div class="modal-footer">
+              <button type="submit" id="submit" class="btn btn-primary">Add</button>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+       <div class="page-wrapper">
+        <!-- <section class="chatbox"> -->
+            <div class="addexp">
+                <a data-toggle="modal" data-target="#exampleModal" data-whatever="@getbootstrap" class="btn btn-success d-none d-md-inline-block text-white" >Add Experiance</a>
+            </div>
+            <!-- <section class="chat-window">
+                <img class="company-img" id="user-0" src="images/amazon.png" /> -->
+            <!-- abhjeet start -->
+            <section id="testimonial">
+                <div class="container">
+                     <div class="row">
+      
+                          <div class="col-md-12 col-sm-12">
+                               <div class="section-title">
+                                    <h2>BLOGS <small>some of our experiences</small></h2>
+                               </div>
+                               
+                <% for(var i=0; i < exp.length; i++) { %>
+                    <!-- <article class="msg-container msg-remote" id="msg-0">
+                        <div class="msg-box">
+                            <img class="user-img" id="user-0" src="" />
+                            <div class="flr">
+                                <div class="messages">
+                                    <p class="msg" id="msg-0">
+                                        <%= exp[i].experiance %>
+                                    </p>
+                                </div>
+                                <span class="timestamp"><span class="username"><%= exp[i].name %></span>&bull;<span class="posttime"><%= exp[i].year %>  <%= exp[i].branch %></span></span>
+                            </div>
+                        </div> 
+                    </article> -->
+                    <div class="col-md-6 col-sm-4">
+                        <div class="item">
+                             <div class="tst-image">
+                                  <img src="data:image/<%=exp[i].contentType%>;base64,<%=exp[i].data%>" class="img-responsive" alt="user image">
+                             </div>
+                             <div class="tst-author">
+                                  <h4><%= exp[i].name %>
+                                  <small><%=exp[i].branch %></small></h4>
+                                  <span>Batch of <%=exp[i].year  %> </span>
+                             </div>
+                             <p><%=exp[i].experiance  %></p>
+                             <div class="courses-info">
+                                  <div class="courses-price">
+                                       
+                                       <a href="#"><span>VIEW MORE</span></a>
+                                  </div>
+                             </div>
+                        </div>
+                        
+                   </div>
+                <% } %>
+                <!-- </div> -->
+                
+                     </div>
+                </div>
+            </section>
+            <!-- end -->
+                <!-- <article class="msg-container msg-remote" id="msg-0">
+                    <div class="msg-box">
+                        <img class="user-img" id="user-0" src="//gravatar.com/avatar/00034587632094500000000000000000?d=retro" />
+                        <div class="flr">
+                            <div class="messages">
+                                <p class="msg" id="msg-0">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praeseyeuguuuuuuuuuuuuuuuuuuuuuuuuuuuuuu uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu uuuuuuuuuuuuuuuuuuuuuuuuuuuuu uuuuuuuuuuuuuuuuuuufnt varius, neque non tristique tincidunt, mauris nunc efficitur erat, elementum semper justo odio id nisi.
+                                </p>
+                            </div>
+                            <span class="timestamp"><span class="username">Name</span>&bull;<span class="posttime">3 minutes ago</span></span>
+                        </div>
+                    </div> 
+                </article>
+            </section> -->
+            
+            
+        </section>
+        
+        
+    </div>
+
+
+
+
+
+    <script>
+        const form = document.querySelector('form');
+        form.addEventListener('submit', async(e)=> {
+            e.preventDefault();
+
+            const branch =form.branch.value;
+            const id=form.id.value;
+            const year =form.year.value;
+            const company =form.company.value;
+            const experiance =form.experiance.value;
+            
+
+            try{
+                const res = await fetch('/addexperiance', { 
+                method: 'POST', 
+                body: JSON.stringify({ id,company,branch,year,experiance }),
+                headers: {'Content-Type': 'application/json'}
+                    });
+                    const data= await res.status;
+                    if(data ==200){
+                        location.assign('/experiance');
+                    }
+                }
+                    catch (err) {
+                        console.log(err);
+    }
+                });
+    </script>
+
+       <!-- jQuery -->
+    <script src="../js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="../js/popper.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="../js/owl-carousel.js"></script>
+    <script src="../js/scrollreveal.min.js"></script>
+    <script src="../js/waypoints.min.js"></script>
+    <script src="../js/jquery.counterup.min.js"></script>
+    <script src="../js/imgfix.min.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="../js/custom.js"></script>
+
+    <!-- abhjeeet start -->
+    <script src="../css/abhijeet/js/jquery.js"></script>
+     <script src="../css/abhijeet/js/bootstrap.min.js"></script>
+     <script src="../css/abhijeet/js/owl.carousel.min.js"></script>
+     <script src="../css/abhijeet/js/smoothscroll.js"></script>
+     <script src="../css/abhijeet/js/custom.js"></script>
+    <!-- end -->
+
+    </body>
+</html>
+
