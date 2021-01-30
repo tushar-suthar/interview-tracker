@@ -1,0 +1,73 @@
+
+  section {
+    position: relative;
+    padding: 100px 0;
+  }
+
+  #team,
+  #testimonial {
+    background: #f9f9f9;
+  }
+
+  #team,
+  #testimonial {
+    text-align: center;
+  }
+
+  .section-title {
+    padding-bottom: 40px;
+  }
+
+  .section-title h2 {
+    margin: 0;
+  }
+
+  .section-title small {
+    display: block;
+  }
+
+.section-btn {
+    background: transparent;
+    border-radius: 50px;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    font-size: inherit;
+    font-weight: normal;
+    padding: 15px 30px;
+    transition: 0.5s;
+  }
+
+  .section-btn:hover {
+    background: #ffffff;
+    border-color: transparent;
+  }
+.team-thumb {
+    background: #ffffff;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .team-info {
+    padding: 20px 30px;
+  }
+
+  .team-image img {
+    width: 100%;
+    height: 200%;
+  }
+
+  .team-thumb .social-icon {
+    border-top: 1px solid #f0f0f0;
+    padding: 4px 20px 0 20px;
+  }
+
+  .team-thumb .social-icon li a {
+    background: #ffffff;
+    color: #252020;
+  }
+
+  .team-info h3 {
+    margin: 0;
+  }

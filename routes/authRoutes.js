@@ -33,7 +33,9 @@ router.get('/admintopics',authController.admintopic_get);
 
 
 
-
+router.get('/c' , (req,res) => {
+    res.render('abhi_ques')
+})
 
 
 
