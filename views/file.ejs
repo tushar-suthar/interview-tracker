@@ -5,16 +5,8 @@
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <meta name="description" content="">
+      <link rel="icon" type="image/png" sizes="16x16" href="../images/main.png">
       <meta name="author" content="Template Mo">
-
-      
-        <!-- abhijeet css -->
-        <link rel="stylesheet" href="../css/abhijeet/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/abhijeet/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../css/abhijeet/css/owl.carousel.css">
-        <link rel="stylesheet" href="../css/abhijeet/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="../css/abhijeet/css/templatemo-style.css">
-        <!-- end -->
 
       <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
   
@@ -26,11 +18,11 @@
   
   -->
       <!-- Additional CSS Files -->
-      <link href="../css/board.min.css" rel="stylesheet">
+      <link href="../css/question.min.css" rel="stylesheet">
       <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
-      <link rel="stylesheet" type="text/css" href="../css/new.css">
-      <link rel="stylesheet" type="text/css" href="../css/owl-carousel.css">
+      <link rel="stylesheet" type="text/css" href="../css/question.css">
+      
       
   </head>
   <body>
@@ -78,33 +70,32 @@
             <% } %>
       <% } %>
     </ul> --> 
-    <section id="team">
-      <div class="container">
-           <div class="row">
-
-      <div class="col-md-12 col-sm-12">
-           <div class="section-title">
-                <h2>Topics<small>Practice from some topics </small></h2>
-           </div>
-      </div>
-      <% for(var i=0; i < question.length; i++) { %>
-           <div class="col-md-3 col-sm-6">
-           <div class="team-thumb">
-                <div class="team-info">
-                     <h3><a href="<%= question[i].link %>"><%= question[i].name %></a></h3>
-                </div>
-           </div>
-           </div>
-           <% } %>
-           
-      </div>
- </section>
-                     
- <script src="../css/abhijeet/js/jquery.js"></script>
- <script src="../css/abhijeet/js/bootstrap.min.js"></script>
- <script src="../css/abhijeet/js/owl.carousel.min.js"></script>
- <script src="../css/abhijeet/js/smoothscroll.js"></script>
- <script src="../css/abhijeet/js/custom.js"></script>
+    <div class="list">
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <% for(var i=0; i < question.length; i++) { %>
+              <%if (question[i].visible==1) { %>
+              <div class="col-12">
+                <a href="<%= question[i].linkto %>">
+                  <div class="card" >
+                      <div class="card-body">
+                              <div class="icon-list-demo row">
+                                  <div class="col-sm-6 col-md-6 col-lg-12 f-icon" ><i class="fas fa-angle-double-right"></i> <%= question[i].name %></div>
+                              </div>
+                      </div>
+                  </div>
+                  </a>
+              </div>
+              <% } %>
+              <% } %>
+                      </div>
+                  </div>
+        </div>
+                  
+ 
 
 </body>
 </html>

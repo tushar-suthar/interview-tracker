@@ -150,7 +150,8 @@ module.exports.addexperiance_post = async(req,res) =>{
             const data =result.image.data.toString('base64');
             const exp =await Experiance.create({name,contentType,data,company,branch,year,experiance});
             res.status(200);
-            res.redirect('/experiance');
+            const c="/experiance/"+company;
+            res.redirect(c);
         }
     }
     )

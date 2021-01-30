@@ -2,13 +2,10 @@
 <html lang="en">
     <head>
         <link rel="stylesheet" href="../css/expboard.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="../images/main.png">
 
         <!-- abhijeet css -->
-        <link rel="stylesheet" href="../css/abhijeet/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../css/abhijeet/css/font-awesome.min.css">
-        <link rel="stylesheet" href="../css/abhijeet/css/owl.carousel.css">
-        <link rel="stylesheet" href="../css/abhijeet/css/owl.theme.default.min.css">
-        <link rel="stylesheet" href="../css/abhijeet/css/templatemo-style.css">
+        
         <!-- end -->
 
         <link href="../css/expboard.min.css" rel="stylesheet">
@@ -91,7 +88,8 @@
       
                           <div class="col-md-12 col-sm-12">
                                <div class="section-title">
-                                    <h2>BLOGS <small>some of our experiences</small></h2>
+                                <img class="img-c rounded-circle" src="/images/<%= company %>.png" alt="Profile image">
+                                    <h2>some of our experiences</h2>
                                </div>
                                
                 <% for(var i=0; i < exp.length; i++) { %>
@@ -180,7 +178,7 @@
                     });
                     const data= await res.status;
                     if(data ==200){
-                        location.assign('/experiance');
+                        location.assign('/experiance/<%= company %>');
                     }
                 }
                     catch (err) {
@@ -205,15 +203,6 @@
     
     <!-- Global Init -->
     <script src="../js/custom.js"></script>
-
-    <!-- abhjeeet start -->
-    <script src="../css/abhijeet/js/jquery.js"></script>
-     <script src="../css/abhijeet/js/bootstrap.min.js"></script>
-     <script src="../css/abhijeet/js/owl.carousel.min.js"></script>
-     <script src="../css/abhijeet/js/smoothscroll.js"></script>
-     <script src="../css/abhijeet/js/custom.js"></script>
-    <!-- end -->
-
     </body>
 </html>
 
