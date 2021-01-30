@@ -33,14 +33,16 @@ const adminAuth = (req, res, next) => {
         res.redirect('/login');
       } else {
         console.log(decodedToken);
-        console.log(res.locals.user);
         let swag = admin.admins();
+        var flag=0;
         for(var i=0;i<swag.length;i++){
-          if(swag.name == res.locals.user.username && swag.email == res.locals.user.email){
+          if(swag[i].name == res.locals.user.username && swag[i].email == res.locals.user.email){
+            flag=1;
             next();
             break;
           }
-        }
+        }if(flag==0)
+        res.render('unathorised')
         
       }
     });

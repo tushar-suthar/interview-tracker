@@ -2,8 +2,11 @@ const User = require("../models/User");
 const jwt = require('jsonwebtoken');
 const question = require('../models/question.js');
 const topic = require('../models/topics.js');
+const company = require('../models/company.js')
+const experience = require('../models/experience.js')
 const mongoose = require('mongoose');
 const express = require('express');
+const { db } = require("../models/User");
 const app = express();
 
 
@@ -59,7 +62,7 @@ for(var i = 0;i<data.length;i++){
 }
 const result = await question.find({topic : des})
 
-res.render('./topic/stacks' , {question : result})
+res.render('question' , {question : result})
 }
 
 module.exports.topic_get = (req, res) => {
@@ -74,13 +77,11 @@ module.exports.topic_get = (req, res) => {
 }
 
 module.exports.question_post = async(req,res) => {
-  var data = new question(res.body);
-  console.log(res.body)
-  let d= await topic.find({name : data.top});
-  
-  
-  console.log(d.name);
-
+  var a = req.body.top;
+  let d= await topic.find({name : a});
+  req.body.top = d[0]._id;
+  console.log(req.body);
+  var data = new question({name : req.body.name , link : req.body.link , topic : req.body.top});
   data.save()
   .then(item => {
     console.log("data is saved");
@@ -88,6 +89,41 @@ module.exports.question_post = async(req,res) => {
   .catch(err => {
     console.log(err);
   })
+}
+
+module.exports.experience_post = async(req,res) => {
+  var a = req.body.comp;
+  console.log(req.body);
+  let d= await company.find({name : a});
+  req.body.comp = d[0]._id;
+  // console.log(req.body);
+  var data = new experience({img : req.body.image ,name : req.body.name , branch : req.body.branch , year : req.body.year, company : req.body.comp , exp : req.body.experience});
+  data.save()
+  .then(item => {
+    console.log("data is saved");
+  })
+  .catch(err => {
+    console.log(err);
+  })
+}
+
+module.exports.experience_get =async (req, res) => {
+  const str = req.params.name;
+  let des=1;
+  const data= await company.find({}).lean().exec()
+  for(var i = 0;i<data.length;i++){
+    const equal = data[i].name;
+    if(str.trim() == equal.trim())
+    des = data[i]._id;
+  }
+  const result = await experience.find({company : des})
+  console.log(result);
+  res.render('experience' , {result})
+  }
+
+module.exports.admintopic_get = async(req,res) => {
+  const data = await topic.find({});
+  res.render('admintopic' , {data});
 }
 
 module.exports.signup_get = (req, res) => {
@@ -99,10 +135,10 @@ module.exports.login_get = (req, res) => {
 }
 
 module.exports.signup_post = async (req, res) => {
-  const { email, password } = req.body;
+  const { username , email, password } = req.body;
 
   try {
-    const user = await User.create({ email, password });
+    const user = await User.create({ username : username ,email: email,password :  password });
     const token = createToken(user._id);
     res.cookie('jwt', token, { httpOnly: true, maxAge: maxAge * 1000 });
     res.status(201).json({ user: user._id });

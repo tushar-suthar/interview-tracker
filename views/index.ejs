@@ -59,13 +59,13 @@ https://templatemo.com/tm-516-known
                          <li><a href="/" class="smoothScroll">Home</a></li>
 
                          <li><a href="./topics" class="smoothScroll">Practice</a></li>
-                         <li><a href="#" class="smoothScroll">Blogs</a></li>
+                         <li><a href="/blogs" class="smoothScroll">Blogs</a></li>
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
                         <% if (user) { %>
 
-                          <li ><a href="#"><%= user.username %></a></li>
+                          <li ><a href="#">Hi <%= user.username %></a></li>
                           <li ><a href="/logout">Log out</a></li>
                         <% } else { %>
 
@@ -163,10 +163,8 @@ https://templatemo.com/tm-516-known
                               <div class="footer_menu">
                                    <h2>Quick Links</h2>
                                    <ul>
-                                        <li><a href="#">Career</a></li>
-                                        <li><a href="#">Investor</a></li>
-                                        <li><a href="#">Terms & Conditions</a></li>
-                                        <li><a href="#">Refund Policy</a></li>
+                                        <li><a href="/check">Add question</a></li>
+                                        
                                    </ul>
                               </div>
                          </div>
@@ -175,15 +173,17 @@ https://templatemo.com/tm-516-known
                     <div class="col-md-4 col-sm-12">
                          <div class="footer-info newsletter-form">
                               <div class="section-title">
-                                   <h2>Newsletter Signup</h2>
+                                   <h2>Add your experince</h2>
+                                   <p></p>
+                                   <p>Wanna share your experience add it now.</p>
                               </div>
                               <div>
                                    <div class="form-group">
-                                        <form action="#" method="get">
-                                             <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required="">
-                                             <input type="submit" class="form-control" name="submit" id="form-submit" value="Send me">
+                                        <form action="/dummy" method="get">
+                                             
+                                             <input type="submit" class="form-control" name="submit" id="form-submit" value="Add">
                                         </form>
-                                        <span><sup>*</sup> Please note - we do not spam your email.</span>
+                                        
                                    </div>
                               </div>
                          </div>

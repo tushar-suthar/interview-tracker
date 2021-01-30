@@ -27,8 +27,8 @@
 <form action="/signup">
 
   <h2>Sign up</h2>
-  <label for="name">Username</label>
-  <input type="text" name="name" required />
+  <label for="username">Username</label>
+  <input type="text" name="username" required />
   <label for="email">Email</label>
   <input type="text" name="email" required />
   <div class="email error"></div>
@@ -59,11 +59,11 @@
     // get values
     const email = form.email.value;
     const password = form.password.value;
-
+    const username = form.username.value;
     try {
       const res = await fetch('/signup', {
         method: 'POST',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, email, password }),
         headers: {'Content-Type': 'application/json'}
       });
       const data = await res.json();
