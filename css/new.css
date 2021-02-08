@@ -938,7 +938,7 @@ div.list li{
   box-shadow: 0 14px 26px rgba(0,0,0,0.04);
   transition: all 0.3s ease-out;
   text-decoration: none;
-  --bg-color: #DCE9FF;
+  --bg-color: rgb(161, 228, 255);
   --bg-color-light: #f1f7ff;
   --text-color-hover: #4C5656;
   --box-shadow-color: rgba(220, 233, 255, 0.48);
@@ -951,6 +951,7 @@ div.list li{
 
 .card:hover {
   transform: translateY(-5px) scale(1.005) translateZ(0);
+  background-color: rgb(52, 189, 243);
   box-shadow: 0 24px 36px rgba(0,0,0,0.11),
     0 24px 46px var(--box-shadow-color);
 }
@@ -965,6 +966,7 @@ div.list li{
 }
 
 .card:hover .circle:after {
+  
   background: var(--bg-color-light);
 }
 

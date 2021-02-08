@@ -69,18 +69,20 @@ app.get('/home',requireAuth,(req,res) => {
       });
 });
 
-app.get('/topic/:id',requireAuth, async function(req, res) {
-   var Id = req.params.id;
+app.get('/topic/:name',requireAuth, async function(req, res) {
+  var name = req.params.name;
+   topic.find({topicName:name},function(err,data){
+        var Id= data[0]._id;
+        question.find({topicName:Id}, function(err, result){
+            if(err){
+                res.send(err);
+            }
+            else{
+              res.render('file',{'question' : result});
+            }
+            });
   
-   question.find({topicName:Id}, function(err, result){
-       if(err){
-           res.send(err);
-       }
-       else{
-         res.render('file',{'question' : result});
-       }
-       });
-  
+});
 });
 
 
