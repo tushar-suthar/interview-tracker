@@ -60,7 +60,12 @@ You can add your experience by clicking add experince
 
 * [Node js](https://nodejs.org/en/) - The web framework used
 
-
+### Modules used
+* Express
+* Mongoose
+* Multer
+* FS
+* Cookie-Parser
 
 
 # Team Memebers
