@@ -68,7 +68,7 @@ You can add your experience by clicking add experince
 * Cookie-Parser
 
 
-# Team Memebers
+# Team Members
 
 ### Abhijeet Kumar
 ### Tushar Suthar
