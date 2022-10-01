@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    
+  <head>
+    <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <link rel="icon" type="image/png" sizes="16x16" href="../images/main.png">
+      <meta name="author" content="Template Mo">
+
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  
+      <title>interview tracker</title>
+  <!--
+  
+  ART FACTORY
+  https://templatemo.com/tm-537-art-factory
+  
+  -->
+      <!-- Additional CSS Files -->
+      <link href="../css/question.min.css" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+      <link rel="stylesheet" type="text/css" href="../css/question.css">
+      
+      
+  </head>
+  <body>
+    <header class="header-area header-sticky">
+      <div class="container">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a href="/" class="logo">Interview Tracker</a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      
+                      <ul class="nav">
+                          <li class="submenu">
+                              <a href="javascript:;"><img class="img-xs rounded-circle" src="data:image/<%=user.image.contentType%>;base64,<%=user.image.data.toString('base64')%>" alt="Profile image"></a>
+                              <ul>
+                                  <p><strong><%= user.username %></strong></p>
+                                  <li><a href="profile">Profile</a></li>
+                                  <li><a href="logout">Log Out</a></li>
+                              </ul>
+                          </li>
+                      </ul>
+                          
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+     </header>
+<!-- <div class="list"> -->
+
+        <!-- <ul>
+          <div class="box">
+            <input type="checkbox" id="expanded">
+            <p>Hey, don't cut me off like that. I want to speak mylsada usabdsadash uasduiasgidu asgduiagsiusa iuasgdiuasgd igasiud dgas asyyugdsay gdiasg suagiausgiaug diua gaisgasidiusa uiahuias uiasgdiuadsghi uiasgduiasg aiusfdhia mind and don't appreciate being put into a box.</p>
+             Note: I have sadly not found a nice way to put the more button/label inline inside the paragraph, after or before the ellipsis. -->
+            <!-- <label for="expanded" role="button">read more</label>
+          </div>
+      <% for(var i=0; i < question.length; i++) { %>
+          <%if (question[i].visible==1) { %>
+            <tr>
+              <a href="</%= question[i].linkto %>"><%= question[i].name %></a>
+            </tr>
+            <% } %>
+      <% } %>
+    </ul> --> 
+    <div class="list">
+        <div class="container-fluid">
+          <!-- ============================================================== -->
+          <!-- Start Page Content -->
+          <!-- ============================================================== -->
+          <div class="row">
+            <% for(var i=0; i < question.length; i++) { %>
+              <%if (question[i].visible==1) { %>
+              <div class="col-12">
+                <a href="<%= question[i].linkto %>">
+                  <div class="card" >
+                      <div class="card-body">
+                              <div class="icon-list-demo row">
+                                  <div class="col-sm-6 col-md-6 col-lg-12 f-icon" ><i class="fas fa-angle-double-right"></i> <%= question[i].name %></div>
+                              </div>
+                      </div>
+                  </div>
+                  </a>
+              </div>
+              <% } %>
+              <% } %>
+                      </div>
+                  </div>
+        </div>
+                  
+ 
+
+</body>
+</html>

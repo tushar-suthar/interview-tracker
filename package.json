@@ -1,0 +1,29 @@
+{
+  "name": "interview-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@admin-bro/express": "^3.0.1",
+    "@admin-bro/mongoose": "^1.1.0",
+    "admin-bro": "^3.3.1",
+    "admin-bro-mongoose": "^0.5.2",
+    "bcrypt": "^5.0.0",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "jquery": "^3.5.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.11.8",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.7",
+    "validator": "^13.5.2"
+  }
+}
